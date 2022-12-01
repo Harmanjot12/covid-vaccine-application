@@ -53,38 +53,43 @@ function allVaccine(){
 }
 
 function phase3(){
+    
     document.getElementById("vaccineadd").style.display="none";
     document.getElementById("costreal").style.display="none";
     document.getElementById("vaccineall").style.display="none";
     document.getElementById("threephase").style.display="block";
     document.getElementById("idsearch").style.display="none";
-
     var length = arrayVaccineid.length;
+    
+    var msg = "<table class='table'>" +  
+    "<tr>"+
+        "<th>Vaccine Id </th>"  + 
+        "<th>Vaccine Name </th>" + 
+        "<th>Vaccine Cost </th>" +
+        "<th>Vaccine Phase </th>" +
+        "</tr><br>" + 
+
+    "<tr>" + 
+        "<td>" +  arrayVaccineid[i]    + "</td>" +
+        "<td>" +  arrayVaccineName[i]  + "</td>" +
+        "<td>" +  arrayVaccineCost[i]  + "</td>" +
+        "<td>" +  arrayVaccinePhase[i] + "</td>" +
+        "</tr></br>" +
+    "</table>";
+    
+    
     
     
 
     document.getElementById("allthree").innerHTML = ""; 
-    document.getElementById("allthree").innerHTML += "<table style='background-color:blue; width:30%; border:solid black'>"; 
-    document.getElementById("allthree").innerHTML += "<tr>"+
-                                                    "<th>Vaccine Id </th>"  + 
-                                                    "<th>Vaccine Name </th>" + 
-                                                    "<th>Vaccine Cost </th>" +
-                                                    "<th>Vaccine Phase </th>" +
-                                                    "</tr><br>"; 
 
     var flag = false;
     for(i=0; i<length; i++)
     {
         if(arrayVaccinePhase[i]==3)
         {
-        document.getElementById("allthree").innerHTML +=
+        document.getElementById("allthree").innerHTML += msg;
 
-                        "<tr>" + 
-                        "<td>" +  arrayVaccineid[i]    + "</td>" +
-                        "<td>" +  arrayVaccineName[i]  + "</td>" +
-                        "<td>" +  arrayVaccineCost[i]  + "</td>" +
-                        "<td>" +  arrayVaccinePhase[i] + "</td>" +
-                        "</tr></br>"; 
         }  
             
     }
